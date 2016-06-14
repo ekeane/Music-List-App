@@ -135,5 +135,49 @@ border: solid;
 }
 
 
+.form-signin-heading {
+
+text-align: center;
+font-family: Helvetica, Sans-Serif;
+letter-spacing: -5px;
+color: rgba(0,0,255,0.5);
+font-size: 100px;
+
+
+
+}
+
+
+.form-signin  {
+
+background-color: white !important;
+
+}
+
+.sr-only {
+
+background-color: white !important;
+
+
+}
+
+
+
+.form-control {
+
+background-color: white !important;
+
+
+}
+ .submit{
+
+background-color: white !important;
+
+}
+
+
+
+
+
 
 
