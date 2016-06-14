@@ -1,4 +1,21 @@
+<div class = "inner">
 <h1> Song Lister </h1>
+	<nav>
+		<ul class= "nav master-nav">
+			<li class = "active">
+				<a href = "/"> Home </a>
+			</li>
+			<li>
+				<a href = "#"> Featured songs </a>
+			</li>
+			<li>
+				<a href = "#"> Login </a>
+			</li>
+			</ul>
+	</nav>
+</div>
+
+
 <% @songs.each do |song| %>
   <div class="song">
     <h3>
@@ -12,8 +29,5 @@
 
 
 <!-- <a href="/songs/new"> Post your favourite song! </a> -->
-
-
-
 
 <a class = "btn btn-primary btn-lg" href="/songs/new" id = "post_button" > Post your favourite song! </a> 

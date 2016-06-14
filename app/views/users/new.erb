@@ -1,0 +1,28 @@
+<%if @song.errors && @song.errors.any? %>
+  <div>
+    <strong>Issues with your song post, please fix them:</strong>
+    <ul>
+      <% @song.errors.full_messages.each do |song| %>
+        <li> <%= song %> </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<form class = "styled_input" method="post" action="/songs">
+  <div class = box_1>
+    <label>Song</label>
+    <input type="text" name="title" value="<%= @song && @song.title %>"></input>
+  </div>
+  <div class = box_2>
+    <label>Artist</label>
+    <input type="text" name="author" value="<%= @song && @song.author %>"></input>
+  </div>
+  <div class = box_3>
+    <label>URL</label>
+    <input type="text" name="content" value="<%= @song && @song.content %>"></input>
+  </div>
+  <div>
+    <input class = "button_3" type="submit" value="submit">
+  </div>
+</form>

@@ -9,20 +9,25 @@
 h1 {
 
 	display: inline;
-	position: relative;
 	font-family: Helvetica, Sans-Serif;
 	letter-spacing: -5px;
 	color: rgba(0,0,255,0.5);
 	font-size: 200px;
+	margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 
 h1:after {
 
-	position: absolute; left: 50px; top: 20px;
 	color: rgba(255,0,0,0.5);   
 
 }
+
+.masthead-brand {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
 
 .song {
 
