@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <link rel="stylesheet" href="/stylesheets/normalize.css">
+ 
+  <link rel="stylesheet" href="/stylesheets/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascript/application.js"></script>
+
+  <title></title>
+</head>
+<body>
+  <div>
+    <% if @current_user %>
+      <p>Hello, <%= @current_user.email %>!</p> | 
+      <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/login">Login</a>
+    <% end %>
+  </div>
+  <%= yield %>
+
+</body>
+</html>

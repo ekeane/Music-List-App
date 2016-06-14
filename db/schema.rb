@@ -14,15 +14,19 @@
 ActiveRecord::Schema.define(version: 20160614115545) do
 
   create_table "songs", force: :cascade do |t|
-    t.string "title"
-    t.string "author"
-    t.string "content"
+    t.integer  "users_id"
+    t.string   "title"
+    t.string   "author"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password"
+    t.string   "approver"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

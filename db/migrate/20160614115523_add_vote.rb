@@ -1,4 +1,4 @@
-class AddUser < ActiveRecord::Migration
+class AddVote < ActiveRecord::Migration
 
   def change
   	create_table :votes do |t|

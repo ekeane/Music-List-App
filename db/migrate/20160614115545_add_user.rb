@@ -1,11 +1,12 @@
-class AddVote < ActiveRecord::Migration
+class AddUser < ActiveRecord::Migration
 
   def change
   	create_table :users do |t|
   		t.string :name
   		t.string :email
   		t.string :password
-  		t.timestamps   
+  		t.boolean :approver
+  		t.timestamps  null: false  
   	end 
   end
 end
