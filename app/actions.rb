@@ -1,30 +1,3 @@
-before do
-  @current_user = User.find(session[:user_id]) if session[:user_id]
-  cookies[:page_views] ? cookies[:page_views] = cookies[:page_views].to_i + 1 : cookies[:page_views] = 1
-end
-
-  
-  #---------for login---------#
-
-
-  get '/users/login' do
-    erb :'users/login'
-  end
-
-  post '/users/login' do
-    user = User.find_by(email: params[:email])
-    if user.password == params[:password]
-      session[:user_id] = user.id
-      redirect '/'
-    else
-      redirect "/"
-    end
-  end
-
-  get '/logout' do
-    session.clear
-    redirect '/'
-  end
 
 
 # Homepage (Root path)
@@ -63,3 +36,37 @@ post '/songs' do
     erb :'songs/new'
   end
 end
+
+
+
+
+
+before do
+  @current_user = User.find(session[:user_id]) if session[:user_id]
+  cookies[:page_views] ? cookies[:page_views] = cookies[:page_views].to_i + 1 : cookies[:page_views] = 1
+end
+
+  
+  #---------for login---------#
+
+
+  get '/users/login' do
+    erb :'users/login'
+  end
+
+  post '/users/login' do
+    user = User.find_by(email: params[:email])
+    if user && user.password == params[:password]  
+      session[:user_id] = user.id
+      redirect '/'
+    else
+      redirect "/"
+    end
+  end
+
+  get '/logout' do
+    session.clear
+    redirect '/'
+  end
+
+

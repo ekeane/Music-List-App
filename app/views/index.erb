@@ -23,12 +23,25 @@
     </h3>
     <p>
     	<%= song.content %>
+    	<div id="app">
+  <div class="container-fluid">
+    <ul class="list-group">
+      <post v-for="post in posts" :post="post"> </post>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
     </p>	
   </div>
 <% end %>
 
 
-<!-- <a href="/songs/new"> Post your favourite song! </a> -->
+
+
 
 <a class = "btn btn-primary btn-lg" href="/songs/new" id = "post_button" > Post your favourite song! </a> 
 
