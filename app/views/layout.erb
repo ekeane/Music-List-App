@@ -20,6 +20,30 @@
   <title></title>
 </head>
 <body>
+  
+  <!-- nav   -->
+    
+    <nav>
+      <h1> Song Lister </h1>
+      <ul class= "nav master-nav">
+        <li class = "active">
+          <a href = "/"> Home </a>
+        </li>
+        <li>
+          <a href = "#"> Featured songs </a>
+        </li>
+        <li>
+          <% if current_user %>
+            <h6>Welcome, <%= current_user.name %></h6>
+            <a href="/user/logout">Logout</a>
+          <% else %>
+            <a href = "/users/login"> Login </a>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+
+  <!-- page content -->
   <%= yield %>
 </body>
 </html>

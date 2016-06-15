@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160614115545) do
 
   create_table "songs", force: :cascade do |t|
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.string   "title"
     t.string   "author"
     t.string   "content"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 20160614115545) do
     t.string   "name"
     t.string   "email"
     t.string   "password"
-    t.string   "approver"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean  "approver"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "votes", force: :cascade do |t|

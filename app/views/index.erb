@@ -1,25 +1,8 @@
-<div class = "inner">
-<h1> Song Lister </h1>
-	<nav>
-		<ul class= "nav master-nav">
-			<li class = "active">
-				<a href = "/"> Home </a>
-			</li>
-			<li>
-				<a href = "#"> Featured songs </a>
-			</li>
-			<li>
-				<a href = "/users/login"> Login </a>
-			</li>
-			</ul>
-	</nav>
-</div>
-
-
 <% @songs.each do |song| %>
   <div class="song">
     <h3>
     	<a href ="/songs/new <%= song.id %>"><%= song.title %> </a> <small> (by: <%= song.author %>)</small>
+      
     </h3>
     <p>
     	<%= song.content %>
@@ -27,12 +10,10 @@
   <div class="container-fluid">
     <ul class="list-group">
       <post v-for="post in posts" :post="post"> </post>
+      <p><i>Posted By: <%= song.user.name %></i></p>
     </ul>
   </div>
 </div>
-
-
-
 
 
     </p>	

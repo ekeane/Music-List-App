@@ -1,4 +1,10 @@
+helpers do 
 
+  def current_user 
+    User.find(session[:user_id]) if session[:user_id]
+  end
+
+end 
 
 # Homepage (Root path)
 get '/' do
@@ -38,9 +44,6 @@ post '/songs' do
 end
 
 
-
-
-
 before do
   @current_user = User.find(session[:user_id]) if session[:user_id]
   cookies[:page_views] ? cookies[:page_views] = cookies[:page_views].to_i + 1 : cookies[:page_views] = 1
@@ -60,11 +63,12 @@ end
       session[:user_id] = user.id
       redirect '/'
     else
-      redirect "/"
+      erb :'/users/login'
     end
   end
 
-  get '/logout' do
+
+  get '/user/logout' do
     session.clear
     redirect '/'
   end
